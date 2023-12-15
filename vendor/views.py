@@ -72,6 +72,7 @@ def vendorPerformace(request,pk):
     late_delivery = all_PO.count()-on_time_delivery.count()
     acknowledgment_dates = PurchaseOrder.objects.filter(vendor=vendor)
     issue_dates = PurchaseOrder.objects.filter(vendor=vendor)
+    po_by_vendors = PurchaseOrder.objects.filter(vendor=vendor)
     days_list = []
     for art in acknowledgment_dates:
         acknowledgment_dates = art.acknowledgment_date
@@ -91,6 +92,6 @@ def vendorPerformace(request,pk):
         
         
     page="vendorperformance"
-    context={"page":page,"vendor":vendor,"cpo":completed_PO,"ppo":pending_PO,"capo":cancelled_PO,"allpo":all_PO,"fulfillement_rate":fulfillement_rate,"otd":on_time_delivery,"otdr":on_time_delivery_rate,"late_delivery":late_delivery,"average_response_time":average_response_time,"quality_avg_rating":quality_avg_rating}
+    context={"page":page,"vendor":vendor,"cpo":completed_PO,"ppo":pending_PO,"capo":cancelled_PO,"allpo":all_PO,"fulfillement_rate":fulfillement_rate,"otd":on_time_delivery,"otdr":on_time_delivery_rate,"late_delivery":late_delivery,"average_response_time":average_response_time,"quality_avg_rating":quality_avg_rating,"po_by_vendors":po_by_vendors}
     return render(request,"vendor/home.html", context)
     

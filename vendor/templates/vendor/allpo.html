@@ -21,42 +21,96 @@
 </section>
 <section class="ongoing__orders">
   {% for PO in searchedPO %}
-  <div class="ongoing__orders--card">
-    <div class="ongoing__orders--card--items card">
-      <span id="order">{{PO.status}}</span>
-      <p id="order-sub">Items</p>
-    </div>
-    <div class="ongoing__orders--card--items card">
-      <span id="order">{{PO.order_date|date:"SHORT_DATE_FORMAT"}}</span>
-      <p id="order-sub">Orderd on</p>
-    </div>
-    <div class="ongoing__orders--card--items card">
-      <span id="order">{{PO.delivery_date|date:"SHORT_DATE_FORMAT"}}</span>
-      <p id="order-sub">Delivery date</p>
-    </div>
-    <div class="ongoing__orders--card--items card">
-      <span id="order">{{PO.vendor.name}}</span>
-      <p id="order-sub">Vendor</p>
-    </div>
-    <div class="ongoing__orders--card--items card">
-      <span id="order">{{PO.status}}</span>
-      <p id="order-sub">Staus</p>
-    </div>
-    <div class="ongoing__orders--card--items card">
-      <span id="order">{{PO.po_number}}</span>
-      <p id="order-sub">PO number</p>
-    </div>
-    <div class="ongoing__orders--card--items card">
-      <span id="order"
-        >{{PO.acknowledgment_date|date:"SHORT_DATE_FORMAT"}}</span
-      >
-      <p id="order-sub">Acknowledgement date</p>
-    </div>
-    <div class="ongoing__orders--card--items card">
-      <span id="order">{{PO.quality_rating}}%</span>
-      <p id="order-sub">Quality rating</p>
-    </div>
+  <div class="ongoing__orders--table">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Items</td>
+        <td>{{PO.items}}</td>
+      </tr>
+      <tr>
+        <td>PO Number</td>
+        <td>{{PO.po_number}}</td>
+      </tr>
+      <tr>
+        <td>Issue date</td>
+        <td>{{PO.issue_date}}</td>
+      </tr>
+      <tr >
+        <td>Acknowledgement date</td>
+        <td>{{PO.acknowledgment_date}}</td>
+      </tr>
+      <tr>
+        
+        <td>Order date</td>
+        <td>{{PO.order_date}}</td>
+      </tr>
+      <tr>
+        <td>Delivery date</td>
+        <td>{{PO.delivery_date}}</td>
+      </tr>
+      <tr>
+        <td>Quantity</td>
+        <td>{{PO.quantity}}</td>
+      </tr>
+      <tr>
+        <td>Status</td>
+        {% if PO.status == "completed" %}
+        <td style="background-color: green; color: white;">{{PO.status}}</td>
+        {% elif PO.status == "pending" %}
+        <td style="background-color: rgb(197, 197, 8); color: white;">{{PO.status}}</td>
+        {% else %}
+        <td style="background-color: rgb(197, 40, 8); color: white;">{{PO.status}}</td>
+        {% endif %}
+      </tr>
+      <tr>
+        <td>Quality Rating</td>
+        <td>{{PO.quality_rating}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
   </div>
   {% endfor %}
 </section>
-{% endblock content %}
+{% endblock content %} {% comment %}
+  <div class="ongoing__orders--card--items card">
+    <span id="order">{{PO.status}}</span>
+    <p id="order-sub">Items</p>
+  </div>
+  <div class="ongoing__orders--card--items card">
+    <span id="order">{{PO.order_date|date:"SHORT_DATE_FORMAT"}}</span>
+    <p id="order-sub">Orderd on</p>
+  </div>
+  <div class="ongoing__orders--card--items card">
+    <span id="order">{{PO.delivery_date|date:"SHORT_DATE_FORMAT"}}</span>
+    <p id="order-sub">Delivery date</p>
+  </div>
+  <div class="ongoing__orders--card--items card">
+    <span id="order">{{PO.vendor.name}}</span>
+    <p id="order-sub">Vendor</p>
+  </div>
+  <div class="ongoing__orders--card--items card">
+    <span id="order">{{PO.status}}</span>
+    <p id="order-sub">Staus</p>
+  </div>
+  <div class="ongoing__orders--card--items card">
+    <span id="order">{{PO.po_number}}</span>
+    <p id="order-sub">PO number</p>
+  </div>
+  <div class="ongoing__orders--card--items card">
+    <span id="order">{{PO.acknowledgment_date|date:"SHORT_DATE_FORMAT"}}</span>
+    <p id="order-sub">Acknowledgement date</p>
+  </div>
+  <div class="ongoing__orders--card--items card">
+    <span id="order">{{PO.quality_rating}}%</span>
+    <p id="order-sub">Quality rating</p>
+  </div>
+</div>
+{% endcomment %}

@@ -75,6 +75,51 @@
     </tbody>
   </table>
   <br />
+  <p id="po__head">Purchase Orders by {{vendor.name}}</p>
+  <section class="vendor__po">
+    {% for po in po_by_vendors %}
+    <!-- prettier-ignore -->
+    <div class="ongoing__orders--card">
+      <div class="ongoing__orders--card--items card">
+        <span id="order">{{po.status}}</span>
+        <p id="order-sub">Items</p>
+      </div>
+      <div class="ongoing__orders--card--items card">
+        <span id="order">{{po.order_date|date:"SHORT_DATE_FORMAT"}}</span>
+        <p id="order-sub">Orderd on</p>
+      </div>
+      <div class="ongoing__orders--card--items card">
+        <span id="order">{{po.delivery_date|date:"SHORT_DATE_FORMAT"}}</span>
+        <p id="order-sub">Delivery date</p>
+      </div>
+      <div class="ongoing__orders--card--items card">
+        <span id="order">{{po.vendor.name}}</span>
+        <p id="order-sub">Vendor</p>
+      </div>
+      <div class="ongoing__orders--card--items card">
+        <span id="order">{{po.status}}</span>
+        <p id="order-sub">Staus</p>
+      </div>
+      <div class="ongoing__orders--card--items card">
+        <span id="order">{{po.po_number}}</span>
+        <p id="order-sub">PO number</p>
+      </div>
+      <div class="ongoing__orders--card--items card">
+        <span id="order"
+          >{{po.acknowledgment_date|date:"SHORT_DATE_FORMAT"}}</span
+        >
+        <p id="order-sub">Acknowledgement date</p>
+      </div>
+      <div class="ongoing__orders--card--items card">
+        <span id="order">{{po.quality_rating}}%</span>
+        <p id="order-sub">Quality rating</p>
+      </div>
+    </div>
+
+    <!--  -->
+    {% endfor %}
+    <br />
+  </section>
 </section>
 
 {% endblock content %}
