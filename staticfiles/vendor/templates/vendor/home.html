@@ -1,0 +1,25 @@
+{% extends "main.html" %}
+<!-- prettier-ignore -->
+{% load static %}
+
+{% block content %}
+<section class="hp__container">
+  {% include 'vendor/sidebar.html' %}
+  <!-- prettier-ignore -->
+  <div class="hp__container--main">
+        {% if page == "home" %}
+        {% include 'vendor/allvendor.html' %}
+        {% elif page == "allPO" %}
+        {% include 'vendor/allpo.html' %}
+        {% elif page == "addvendor" %}
+        {% include 'vendor/addvendor.html' %}
+        {% elif page == "vendorperformance" %}
+        {% include 'vendor/vendorEvaluation.html' %}
+        {% elif page == "addPo" %}
+        {% include 'vendor/addpo.html' %}
+        {% endif %}
+        
+      </div>
+</section>
+
+{% endblock content %}
