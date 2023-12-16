@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from .models import vendorModel,PurchaseOrder,PerformanceRecord
 from .forms import VendorAddForm
 from django.db.models import Q
-from .forms import VendorAddForm
+from .forms import VendorAddForm, PoAddForm
 
 # Create your views here.
 def Home(request):
@@ -53,10 +53,25 @@ def addVendor(request):
     if request.method=="POST":
         form = VendorAddForm(request.POST)
         if form.is_valid():
-            form.save() #creates objecrt
+            form.save() #creates object
             return redirect("add-vendor")
     context={"page":page,"form":form,"vendor":vendor}
     return render(request,"vendor/home.html", context)
+
+
+
+# def addPo(request):
+#     page="addPo"
+#     form= PoAddForm()
+#     po = PurchaseOrder.objects.all()
+#     if request.method=="POST":
+#         form = PoAddForm(request.POST)
+#         if form.is_valid():
+#             form.save() #creates objecrt
+#             return redirect("add-po")
+#     context={"page":page,"form":form,"po":po}
+#     return render(request,"vendor/home.html", context)
+
 
 
 

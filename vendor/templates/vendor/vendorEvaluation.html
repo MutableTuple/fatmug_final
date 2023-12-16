@@ -19,6 +19,7 @@
       <span>Fulfillement rate</span>
     </div>
   </div>
+
   <table>
     <thead>
       <tr>
@@ -30,7 +31,7 @@
       <tr>
         <td>Vendor's On time delivery rate</td>
         <td>
-          {{otdr}}% (Early:{{otd.count}} Late:{{late_delivery}}
+          {{otdr|floatformat:2}}% (Early:{{otd.count}} Late:{{late_delivery}}
           Total:{{allpo.count}})
         </td>
       </tr>
@@ -76,6 +77,9 @@
   </table>
   <br />
   <p id="po__head">Purchase Orders by {{vendor.name}}</p>
+  <br />
+  <hr />
+
   <section class="vendor__po">
     {% for po in po_by_vendors %}
     <!-- prettier-ignore -->
@@ -110,7 +114,7 @@
         >
         <p id="order-sub">Acknowledgement date</p>
       </div>
-      <div class="ongoing__orders--card--items card">
+      <div class="ongoing__orders--card--items card quality--rating--d">
         <span id="order">{{po.quality_rating}}%</span>
         <p id="order-sub">Quality rating</p>
       </div>
