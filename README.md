@@ -16,4 +16,6 @@
 ### "PUT":"/api/edit-po/id", 
 ### "DELETE":"/api/delete-po/id",
 ### "GET":"/api/performance-metrics/id",
-    
+
+#data format to be sent while making post requests
+
