@@ -18,4 +18,12 @@
  "GET":"/api/performance-metrics/id"
 
 # Data format to be sent while making post requests
-
+Create Vendor
+{
+name= "",
+contact_details = "",
+address = "",
+on_time_delivery_rate="",
+quality_rating_avg="",
+average_response_time=""
+}
