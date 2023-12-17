@@ -5,7 +5,7 @@
 #https://fatmugfinal-production.up.railway.app/
 
 ## API routes
-# "POST":"/api/create-vendor",
+ "POST":"/api/create-vendor",
 # "GET":"/api/vendors"
 # "GET":"/api/vendor/id",
 # "PUT":"api/edit-vendor/6/", 
