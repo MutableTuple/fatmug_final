@@ -4,6 +4,16 @@
 #Access the Main app here
 #https://fatmugfinal-production.up.railway.app/
 
-#main routes
-## 
+# API routes
+## "POST":"/api/create-vendor",
+## "GET":"/api/vendors"
+## "GET":"/api/vendor/id",
+## "PUT":"api/edit-vendor/6/", 
+## "DELETE":"/api/delete-vendor/id", 
+## "POST":"/api/create-po", 
+## "GET":"/api/allpo", 
+## "GET":"/api/singlepo/id", 
+## "PUT":"/api/edit-po/id", 
+## "DELETE":"/api/delete-po/id",
+## "GET":"/api/performance-metrics/id",
     
