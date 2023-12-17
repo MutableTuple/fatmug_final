@@ -45,6 +45,16 @@
 ### "average_response_time": ""
 ### }
 
+# Dummy data for vendor
+### {
+###  "name": "ABC Supplier",
+###  "contact_details": "Contact Person: John Doe\nEmail: john.doe@example.com\nPhone: +1234567890",
+###  "address": "123 Main Street, Cityville",
+###  "on_time_delivery_rate": 95,
+###  "quality_rating_avg": 4.2,
+###  "average_response_time": 1
+### }
+
 # Get all Purchase Orders ("GET":"/api/allpo")
 
 # Get a single Purchase Order ("GET":"/api/singlepo/id") ⭐id should be the id of an existing Purchase Order
