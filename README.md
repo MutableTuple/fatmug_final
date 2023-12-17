@@ -1,10 +1,5 @@
 # fatmug_final
 
-# Frontend
-![Vendor Page](https://raw.githubusercontent.com/MutableTuple/fm_images/main/add-vendor-page.png)
-
-
-
 # all the files are in the Master Branch
 ## v1.1.1
 
