@@ -1,7 +1,7 @@
 # fatmug_final
 
 # Frontend
-![Vendor Page](https://github.com/MutableTuple/fm_images/blob/main/add-vendor-page.png)
+![Vendor Page](https://raw.githubusercontent.com/MutableTuple/fm_images/main/add-vendor-page.png)
 
 
 
